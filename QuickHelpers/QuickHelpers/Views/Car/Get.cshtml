@@ -1,0 +1,16 @@
+@model QuickHelpers.DbTest.Car[]
+
+@{
+    ViewBag.Title = "Cars";
+    Layout = "_Layout";
+}
+
+<h2>Cars</h2>
+@{
+    foreach (var car in Model)
+    {
+        <p>
+            id - @car.Id; Model - @car.Model; Price - @car.Price
+        </p>
+    }
+}

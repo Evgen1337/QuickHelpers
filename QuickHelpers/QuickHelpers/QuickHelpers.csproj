@@ -4,4 +4,15 @@
         <TargetFramework>netcoreapp3.1</TargetFramework>
     </PropertyGroup>
 
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="5.0.5" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Core" Version="5.0.5" />
+      <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite.Design" Version="1.1.6" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="DbTest\CarDb.db" />
+      <Content Include="DbTest\CarDb.db" />
+    </ItemGroup>
+
 </Project>
