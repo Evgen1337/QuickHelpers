@@ -37,5 +37,28 @@ namespace QuickHelpers.Business.CSharpExecutorService
             var stringText = SourceText.From(text, Encoding.UTF8);
             return SyntaxFactory.ParseSyntaxTree(stringText, options);
         }
+
+        public static string SampleClass = @"
+using System;
+using System.Linq;
+
+namespace SampleNamespace
+{
+    static class SampleClass
+    {
+        private static object _valueToReturn;
+        
+        public static void SampleMethod()
+        {
+            void Return<T>(T result)
+            {
+                _valueToReturn = result;
+            }
+            
+            //CodeHere
+        }
+    }
+}
+";
     }
 }

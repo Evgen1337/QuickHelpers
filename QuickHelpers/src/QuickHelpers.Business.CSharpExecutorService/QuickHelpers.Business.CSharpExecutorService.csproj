@@ -11,9 +11,6 @@
 
     <ItemGroup>
       <Compile Remove="Storage\SampleClass.cs" />
-      <Content Include="Storage\SampleClass.cs">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      </Content>
     </ItemGroup>
 
 </Project>

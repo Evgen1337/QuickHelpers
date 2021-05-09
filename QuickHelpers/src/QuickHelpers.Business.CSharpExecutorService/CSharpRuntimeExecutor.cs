@@ -104,7 +104,7 @@ namespace QuickHelpers.Business.CSharpExecutorService
 
         private Stream CreateDll(string userCode)
         {
-            var sampleCs = GetSampleClass();
+            var sampleCs = CompilerSettings.SampleClass;
             sampleCs = sampleCs.Replace("//CodeHere", userCode);
 
             var (emitResult, dll) = Compile(sampleCs);
@@ -120,18 +120,6 @@ namespace QuickHelpers.Business.CSharpExecutorService
 
             var emitStrErrors = string.Join(Environment.NewLine, emitErrors);
             throw new CompilationException(emitStrErrors);
-        }
-
-        private static string GetSampleClass()
-        {
-            var executableLocation = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-
-            if (executableLocation is null)
-                throw new ArgumentNullException(nameof(executableLocation));
-
-            var fileLocation = Path.Combine(executableLocation, "Storage\\SampleClass.cs");
-            var sampleCs = File.ReadAllText(fileLocation);
-            return sampleCs;
         }
 
         private (EmitResult Result, Stream Dll) Compile(string source)
