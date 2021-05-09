@@ -1,0 +1,36 @@
+@model IServiceSettings
+
+<div class="row">
+    <div class="col-md-4 border-right border-white">
+
+        <h2>Сервисы @Model.ServiceName</h2>
+
+        @{
+            var controller = ViewContext.RouteData.Values["controller"].ToString();
+
+            foreach (var (convertMode, ruConvertMode) in Model.Modes)
+            {
+                <div class="form-group">
+                    <button class="btn" type="button" onclick="replaceContentsOfDiv('@convertMode', '@controller')" style="background-color: #1e7e34">@ruConvertMode</button>
+                </div>
+            }
+        }
+
+    </div>
+    <div id="placeHolderDiv" class="col-md-8">
+        <h1>Тут будут они</h1>
+    </div>
+</div>
+
+<script>
+    function replaceContentsOfDiv(action, controller) {
+        $.ajax({
+            url: '/' + controller + '/' + action,
+            data: { },
+            type: "GET",
+            success: function(data) {
+                $('#placeHolderDiv').html(data);
+            }
+        });
+    }
+</script>

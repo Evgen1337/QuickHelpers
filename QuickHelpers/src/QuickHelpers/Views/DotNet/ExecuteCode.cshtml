@@ -1,0 +1,22 @@
+@model CSharpCodeRequest
+
+@{
+    ViewBag.Title = "ExecuteCode";
+}
+
+<h2>ExecuteCode</h2>
+
+<form id="codeForm">
+	<div>
+		<div class="form-group">
+			<textarea name="Code" asp-for="Code"></textarea>
+		</div>
+		<div class="form-group">
+			<input type="button" value="Выполнить" id="submit" class="form-control"/>
+		</div>
+	</div>
+</form>
+
+<div id="results"></div>
+
+<script src="js/csharpExecutionPage.js" type="text/javascript" />
