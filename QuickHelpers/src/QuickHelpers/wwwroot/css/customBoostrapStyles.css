@@ -1,0 +1,45 @@
+﻿.bg-black{
+    background-color: black;
+}
+
+.bg-dark {
+    background-color: #212121 !important;
+}
+
+.bg-grey{
+    background-color: #434343 !important;
+}
+
+.text-ylow{
+    color: #DCDCAA !important;
+}
+
+.text-prpl{
+    color: #bfa3ef !important;
+}
+
+.text-blue{
+    color: #7185FC !important;
+}
+
+.text-green{
+    color: #4EC9B0 !important;
+}
+
+.bg-gradient{
+    background: linear-gradient(130deg, #ff7a18, #af002d 41.07%, #319197 76.05%) !important;
+}
+
+.border-gradient {
+    border-width: 5px 5px 5px 5px !important;
+    border-image: linear-gradient(130deg, #ff7a18, #af002d 41.07%, #319197 76.05%) !important;
+    border-image-slice: 9 !important;
+    border-style: solid !important;
+}
+
+.border-gradient-bottom {
+    border-width: 0px 0px 2px 0px !important;
+    border-image: linear-gradient(45deg, rgba(100,57,242,1) 0%, rgba(242,55,55,1) 100%) !important;
+    border-image-slice: 9 !important;
+    border-style: solid !important;
+}

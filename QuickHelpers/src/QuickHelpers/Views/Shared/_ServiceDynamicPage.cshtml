@@ -1,24 +1,28 @@
 @model IServiceSettings
 
-<div class="row">
-    <div class="col-md-4 border-right border-white">
+<div class="row p-2">
+    <div class="col-md-3 border-gradient p-2 text-white">
 
         <h2>Сервисы @Model.ServiceName</h2>
+        <ul class="list-group">
+            @{
+                var controller = ViewContext.RouteData.Values["controller"]?.ToString();
 
-        @{
-            var controller = ViewContext.RouteData.Values["controller"].ToString();
+                foreach (var (convertMode, ruConvertMode) in Model.Modes)
+                {
+                    <div class="pb-2">
+                        <a class="list-group-item list-group-item-action text-dark rounded border-light" onclick="replaceContentsOfDiv('@convertMode', '@controller')">
+                            @ruConvertMode
+                        </a>
+                    </div>
+                }
 
-            foreach (var (convertMode, ruConvertMode) in Model.Modes)
-            {
-                <div class="form-group">
-                    <button class="btn" type="button" onclick="replaceContentsOfDiv('@convertMode', '@controller')" style="background-color: #1e7e34">@ruConvertMode</button>
-                </div>
             }
-        }
-
+        </ul>
     </div>
-    <div id="placeHolderDiv" class="col-md-8">
-        <h1>Тут будут они</h1>
+    <div class="col-md-1"></div>
+    <div id="placeHolderDiv" class="col-md-8 border-gradient text-white p-2">
+        <h1>Выберете нужный сервис</h1>
     </div>
 </div>
 

@@ -19,9 +19,12 @@ namespace QuickHelpers
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddControllersWithViews()
+                .AddRazorRuntimeCompilation();
+            
             services.AddRazorPages()
                 .AddRazorRuntimeCompilation();
+            
             services.ConfigureConvertors();
             services.ConfigureCSharpServices();
         }

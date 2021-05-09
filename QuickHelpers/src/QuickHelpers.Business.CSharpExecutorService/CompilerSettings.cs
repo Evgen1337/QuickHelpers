@@ -50,12 +50,22 @@ namespace SampleNamespace
         
         public static void SampleMethod()
         {
-            void Return<T>(T result)
-            {
-                _valueToReturn = result;
-            }
-            
             //CodeHere
+        }
+
+        private static void Return<T>(T result)
+        {
+            _valueToReturn = result;
+        }
+
+        private static void Output<T>(T result)
+        {
+            _valueToReturn = result;
+        }
+
+        private static void Out<T>(T result)
+        {
+            _valueToReturn = result;
         }
     }
 }

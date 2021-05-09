@@ -5,18 +5,30 @@
 }
 
 <h2>ExecuteCode</h2>
-
+<div class="example-main-block p-2 mb-5">
+    <p>
+        Для вывода данных используйте один из методов:
+        <span class="font-weight-bold font-italic text-ylow"> Return(<span class="text-green">T <span class="text-blue">arg</span></span>) </span>
+        <span class="font-weight-bold font-italic text-ylow"> Output(<span class="text-green">T <span class="text-blue">arg</span></span>) </span>
+        <span class="font-weight-bold font-italic text-ylow"> Out(<span class="text-green">T <span class="text-blue">arg</span></span>) </span>
+    </p>
+    <p>
+        Пример:
+        <p class="font-italic">var a = 200 + 28;</p>
+        <p class="font-italic">Out(a);</p>
+    </p>
+</div>
 <form id="codeForm">
-	<div>
-		<div class="form-group">
-			<textarea name="Code" asp-for="Code"></textarea>
-		</div>
-		<div class="form-group">
-			<input type="button" value="Выполнить" id="submit" class="form-control"/>
-		</div>
-	</div>
+    <div>
+        <div class="form-group">
+            <textarea name="Code" asp-for="Code"></textarea>
+        </div>
+        <div class="form-group">
+            <input type="button" value="Выполнить" id="submit" class="btn btn-light text-dark"/>
+        </div>
+    </div>
 </form>
 
 <div id="results"></div>
 
-<script src="js/csharpExecutionPage.js" type="text/javascript" />
+<script src="js/csharpExecutionPage.js" type="text/javascript"/>
